@@ -30,16 +30,18 @@ export const deleteComments = createAsyncThunk(
   }
 )
 
+// UPDATING DATA
+// ONCLICK DISPATCH UPDATECOMMENTS, AND FIND A COMMENT WITH THE ID PROVIDED , UPDATE IT ON THE SERVER AND RETURN AN OBJECT WITH PROPERTIES ID AND CHANGES BEING AN OBJECT, SO WE CAN UPDATE IT ON THE THE UI AS WELL.
 export const updateComments = createAsyncThunk(
   'comments/patchComment',
   async ({ id, newObj }) => {
-    console.log(newObj)
+    // console.log(newObj)
     await fetch(`https://jsonplaceholder.typicode.com/comments/${id}`, {
       method: 'PATCH',
       body: JSON.stringify(newObj),
     })
-    console.log(newObj)
-    return { id, changes: newObj }
+    // console.log(newObj)
+    return { id, changes: newObj } //newObj === new data that will get updated on the UI.
   }
 )
 

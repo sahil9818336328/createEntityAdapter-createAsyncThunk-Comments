@@ -10,7 +10,7 @@ const Comment = ({ comment }) => {
   const dispatch = useDispatch()
   const handlePatch = (id, newObj) => {
     dispatch(updateComments({ id, newObj }))
-    console.log(comment.id)
+    // console.log(comment.id)
   }
   return (
     <Panel header={<h1>{comment.id}</h1>} bordered style={{ margin: '20' }}>
